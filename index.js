@@ -112,13 +112,13 @@ module.exports = function SkipperAzure( globalOptions ) {
       var headers = options.headers || {};
 
       // Lookup content type with mime if not set
-      if ( typeof headers['content-type'] === 'undefined' ) {
-        headers['content-type'] = mime.lookup( newFile.fd );
+      if ( typeof headers['Content-Type'] === 'undefined' ) {
+        headers['Content-Type'] = mime.lookup( newFile.fd );
       }
 
       var uploadOptions = {
-        contentType: headers['content-type']
-      };
+        contentType: headers['Content-Type']
+      }T
 
       // TODO: only used for the waterline-adapter-tests, because they do not set the byteCount attribute
       // checkout the issue on: https://github.com/lukasreichart/skipper-azure/pull/2
